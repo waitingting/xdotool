@@ -84,8 +84,12 @@ int cmd_click(context_t *context) {
   }
 
   button = atoi(context->argv[0]);
-
-  window_each(context, window_arg, {
+  Window *windows; 
+  int nwindows; 
+  window_list(context, window_arg, &windows, &nwindows, False); 
+  int w_index;
+  for (w_index = 0; w_index < nwindows; w_index++) { 
+    Window window = windows[w_index]; 
     if (clear_modifiers) {
       xdo_get_active_modifiers(context->xdo, &active_mods, &active_mods_n);
       xdo_clear_active_modifiers(context->xdo, window, active_mods, active_mods_n);
@@ -101,7 +105,24 @@ int cmd_click(context_t *context) {
       xdo_set_active_modifiers(context->xdo, window, active_mods, active_mods_n);
       free(active_mods);
     }
-  }); /* window_each(...) */
+  } 
+  // window_each(context, window_arg, {
+  //   if (clear_modifiers) {
+  //     xdo_get_active_modifiers(context->xdo, &active_mods, &active_mods_n);
+  //     xdo_clear_active_modifiers(context->xdo, window, active_mods, active_mods_n);
+  //   }
+
+  //   ret = xdo_click_window_multiple(context->xdo, window, button, repeat, delay);
+  //   if (ret != XDO_SUCCESS) {
+  //     fprintf(stderr, "xdo_click_window failed on window %ld\n", window);
+  //     return ret;
+  //   }
+
+  //   if (clear_modifiers) {
+  //     xdo_set_active_modifiers(context->xdo, window, active_mods, active_mods_n);
+  //     free(active_mods);
+  //   }
+  // }); /* window_each(...) */
 
   consume_args(context, 1);
   return ret;

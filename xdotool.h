@@ -22,7 +22,19 @@ extern "C" {
   } \
 } /* end define window_each */
 
-  
+// void static window_each(context, window_arg, block)
+// { 
+//   Window *windows; 
+//   int nwindows; 
+//   window_list(context, window_arg, &windows, &nwindows, False); 
+//   int w_index;
+//   for (w_index = 0; w_index < nwindows; w_index++) { 
+//     Window window = windows[w_index]; 
+//     {  
+//       block 
+//     } 
+//   } 
+// }   
 
 typedef struct context {
   xdo_t *xdo;
