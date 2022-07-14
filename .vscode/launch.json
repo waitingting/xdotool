@@ -5,11 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
             "type": "lldb",
             "request": "launch",
             "name": "lldb Launch",
-            "program": "${workspaceFolder}/xdotool",
-            "args": ["click", "3"],
+            "program": "${workspaceFolder}/build/Debug/xdotool",
+            "args": [
+                "click",
+                "3"
+            ],
             "cwd": "${workspaceFolder}"
         },
         {
@@ -17,10 +28,13 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/xdotool",
-            "args": ["click", "3"],
+            "args": [
+                "click",
+                "3"
+            ],
             "environment": [],
             "cwd": "${workspaceFolder}",
             "miDebuggerPath": "/usr/bin/gdb"
-          }
+        }
     ]
 }

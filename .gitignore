@@ -5,3 +5,4 @@ libxdo.pc
 xdotool
 deb-build
 *.deb
+build/
