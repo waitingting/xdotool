@@ -24,6 +24,16 @@
             "cwd": "${workspaceFolder}"
         },
         {
+            "type": "lldb",
+            "request": "launch",
+            "name": "MouseGetPos",
+            "program": "${workspaceFolder}/build/Debug/xdotool",
+            "args": [
+                "getmouselocation"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
             "name": "gdb Launch",
             "type": "cppdbg",
             "request": "launch",
