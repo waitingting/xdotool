@@ -22,19 +22,6 @@ extern "C" {
   } \
 } /* end define window_each */
 
-// void static window_each(context, window_arg, block)
-// { 
-//   Window *windows; 
-//   int nwindows; 
-//   window_list(context, window_arg, &windows, &nwindows, False); 
-//   int w_index;
-//   for (w_index = 0; w_index < nwindows; w_index++) { 
-//     Window window = windows[w_index]; 
-//     {  
-//       block 
-//     } 
-//   } 
-// }   
 
 typedef struct context {
   xdo_t *xdo;
@@ -56,6 +43,7 @@ typedef struct context {
 } context_t;
 
 int xdotool_main(int argc, char **argv);
+void window_each_ex1(context_t* context, const char* window_arg, void(*fn)());
 int cmd_exec(context_t *context);
 int cmd_sleep(context_t *context);
 int cmd_behave(context_t *context);

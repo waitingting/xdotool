@@ -19,7 +19,7 @@
             "program": "${workspaceFolder}/build/Debug/xdotool",
             "args": [
                 "click",
-                "3"
+                "5"
             ],
             "cwd": "${workspaceFolder}"
         },
@@ -30,6 +30,16 @@
             "program": "${workspaceFolder}/build/Debug/xdotool",
             "args": [
                 "getmouselocation"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "MouseMove",
+            "program": "${workspaceFolder}/build/Debug/xdotool",
+            "args": [
+                "mousemove","511","84"
             ],
             "cwd": "${workspaceFolder}"
         },
@@ -45,6 +55,31 @@
             "environment": [],
             "cwd": "${workspaceFolder}",
             "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "type ",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/xdotool",
+            "args": [
+                "type",
+                "abc"
+            ],
+            "environment": [],
+            "cwd": "${workspaceFolder}",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "key",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}//build/Debug/xdotool",
+            "args": [
+                "key",
+                "ctrl+a"
+            ],
+            "environment": [],
+            "cwd": "${workspaceFolder}",
         }
     ]
 }

@@ -126,6 +126,20 @@ int window_get_arg(context_t *context, int min_arg, int window_arg_pos,
   return True;
 } /* int window_get_arg(context_t *, int, int, char **, int *) */
 
+void window_each_ex1(context_t* context, const char* window_arg, void(*fn)())
+{ 
+  Window *windows; 
+  int nwindows; 
+  window_list(context, window_arg, &windows, &nwindows, False); 
+  int w_index;
+  for (w_index = 0; w_index < nwindows; w_index++) { 
+    Window window = windows[w_index]; 
+    {  
+      fn(); 
+    } 
+  } 
+}   
+
 void window_list(context_t *context, const char *window_arg,
                  Window **windowlist_ret, int *nwindows_ret,
                  const int add_to_list) {
@@ -284,7 +298,24 @@ int is_command(char* cmd) {
   return 0;
 }
 
+void abc(void (*fn)()){};
+
+extern "C"
+#include <algorithm>
+#include <cmath>
+
+
+void abssort(float* x, unsigned n) {
+    std::sort(x, x + n,
+        // Lambda expression begins
+        [](float a, float b) {
+            return (std::abs(a) < std::abs(b));
+        } // end of lambda expression
+    );
+}
+
 int main(int argc, char **argv) {
+  // []() -> bool { return '1' == '"'; };
   return xdotool_main(argc, argv);
 }
 

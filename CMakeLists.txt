@@ -1,5 +1,8 @@
 project(xdotool)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
 add_executable(${PROJECT_NAME})
 # add_library(${PROJECT_NAME} xdotool.c)
 # add_library(rpad::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
