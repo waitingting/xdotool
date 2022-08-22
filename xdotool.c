@@ -298,24 +298,7 @@ int is_command(char* cmd) {
   return 0;
 }
 
-void abc(void (*fn)()){};
-
-extern "C"
-#include <algorithm>
-#include <cmath>
-
-
-void abssort(float* x, unsigned n) {
-    std::sort(x, x + n,
-        // Lambda expression begins
-        [](float a, float b) {
-            return (std::abs(a) < std::abs(b));
-        } // end of lambda expression
-    );
-}
-
 int main(int argc, char **argv) {
-  // []() -> bool { return '1' == '"'; };
   return xdotool_main(argc, argv);
 }
 
