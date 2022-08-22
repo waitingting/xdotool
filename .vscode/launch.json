@@ -15,7 +15,7 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "lldb Launch",
+            "name": "click",
             "program": "${workspaceFolder}/build/Debug/xdotool",
             "args": [
                 "click",
@@ -44,21 +44,8 @@
             "cwd": "${workspaceFolder}"
         },
         {
-            "name": "gdb Launch",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/xdotool",
-            "args": [
-                "click",
-                "3"
-            ],
-            "environment": [],
-            "cwd": "${workspaceFolder}",
-            "miDebuggerPath": "/usr/bin/gdb"
-        },
-        {
             "name": "type ",
-            "type": "cppdbg",
+            "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/build/Debug/xdotool",
             "args": [
@@ -66,14 +53,13 @@
                 "abc"
             ],
             "environment": [],
-            "cwd": "${workspaceFolder}",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "cwd": "${workspaceFolder}"
         },
         {
             "name": "key",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}//build/Debug/xdotool",
+            "program": "${workspaceFolder}/build/Debug/xdotool",
             "args": [
                 "key",
                 "ctrl+a"
